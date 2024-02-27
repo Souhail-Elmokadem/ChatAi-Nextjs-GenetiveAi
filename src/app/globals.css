@@ -32,11 +32,13 @@ section{
   padding: 20px;
   height: calc(height+height*2);
 }
+
 section img{
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%,-50%);
+
 }
 section button{
   background-color: rgb(4, 204, 204);
@@ -56,13 +58,13 @@ section button:disabled{
 }
 
 section {
-  background-color: rgba(51, 51, 52, 0);
   color: white;
   align-items: center;
   justify-content: center;
   text-align: center;
   position: fixed;
   border-radius: 100px;
+  padding-top: 50px;
 }
 section input[type='text'] {
    width: 80%;
@@ -82,6 +84,7 @@ section input[type='text']:focus{
   background-color: rgb(159, 255, 255);
 
 }
+
 .result{
   max-width: 82%;
   height: 75vh;
@@ -91,7 +94,10 @@ section input[type='text']:focus{
   padding: 20px;
   overflow-x:hidden;
 }
+.result > img {
+    pointer-events: none;
 
+}
 
 .profile{
   display: flex;
@@ -189,3 +195,15 @@ section input[type='text']:focus{
 .btncopy:hover{
   transform: scale(1);
 }
+
+@media screen and (max-width: 650px) {
+  section{
+   width: 100%;
+   width: 120%;
+    margin-left: 35px;
+  }
+  .result {
+    max-width: 100%;
+  }
+ 
+ }

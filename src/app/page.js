@@ -3,9 +3,8 @@ import { useEffect, useState,useRef } from 'react';
 import { GoogleGenerativeAI, HarmCategory, HarmBlockThreshold } from '@google/generative-ai';
 import loadingImg from '@/app/media/loading.gif';
 import Image from 'next/image';
-
 const MODEL_NAME = "gemini-1.0-pro";
-const API_KEY = process.env.API_KEY";
+const API_KEY = "AIzaSyDZTMBjPl4ASKQYNywGwCt_v7WVWvZ1Xzk";
 
 export default function Home()  {
   const [hydr, setHydr] = useState(false);
@@ -51,6 +50,12 @@ export default function Home()  {
         console.error(e);
     }
   }
+  try {
+    
+  } catch (error) {
+    
+  }
+  
   const runChat = async () => {
     setLoading(true);
 
@@ -74,14 +79,12 @@ export default function Home()  {
 
     const chat = model.startChat({ generationConfig, safetySettings });
     setMsg("");
-    try {
+   
       const result = await chat.sendMessage(msg);
     const response = result.response;
     setMessageHistory(prev => [...prev, { text: response.text(), role: "model" }]);
     setResponseText(response.text());
-    } catch (error) {
-      console.error('regret !')
-    }
+   
     
 
     setLoading(false);
