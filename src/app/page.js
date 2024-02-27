@@ -1,5 +1,5 @@
 "use client"
-import { useEffect, useState } from 'react';
+import { useEffect, useState,useRef } from 'react';
 import { GoogleGenerativeAI, HarmCategory, HarmBlockThreshold } from '@google/generative-ai';
 import loadingImg from '@/app/media/loading.gif';
 import Image from 'next/image';
@@ -93,13 +93,20 @@ export default function Home()  {
       runChat();
     }
   }
+  const boxRef = useRef(null);
+
+  useEffect(() => {
+    if (boxRef.current) {
+      boxRef.current.scrollTop = boxRef.current.scrollHeight;
+    }
+  }, [messageHistory]);
   return (
     <main>
       <div className='navbar'>
         <p>AuzaWeb <small>ai</small></p>
       </div>
 
-      <div className='result'>
+      <div className='result' ref={boxRef} >
         {loading ? (
           <Image src={loadingImg} width={200} height={200} alt="Loading..." />
         ) : responseText && hydr && (
