@@ -5,7 +5,7 @@ import loadingImg from '@/app/media/loading.gif';
 import Image from 'next/image';
 
 const MODEL_NAME = "gemini-1.0-pro";
-const API_KEY = "AIzaSyDZTMBjPl4ASKQYNywGwCt_v7WVWvZ1Xzk";
+const API_KEY = process.env.API_KEY";
 
 export default function Home()  {
   const [hydr, setHydr] = useState(false);
