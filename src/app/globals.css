@@ -196,6 +196,7 @@ section input[type='text']:focus{
   transform: scale(1);
 }
 
+
 @media screen and (max-width: 650px) {
   section{
    width: 100%;
@@ -207,3 +208,11 @@ section input[type='text']:focus{
   }
  
  }
+ @media screen and (max-width: 1400px) {
+  
+  .result {
+    height: 70vh;
+  }
+ 
+ }
+
