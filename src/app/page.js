@@ -106,7 +106,7 @@ export default function Home()  {
   return (
     <main>
       <div className='navbar'>
-        <p>AuzaWeb <small>ai</small></p>
+        <p>Si Driss <small>ai</small></p>
       </div>
 
       <div className='result' ref={boxRef} >
