@@ -5,12 +5,16 @@ import loadingImg from '@/app/media/loading.gif';
 import Image from 'next/image';
 const MODEL_NAME = "gemini-1.0-pro";
 const API_KEY = "AIzaSyDZTMBjPl4ASKQYNywGwCt_v7WVWvZ1Xzk";
+import Mode from '@/app/components/darkMode/Mode';
 
 export default function Home()  {
+ 
+  
   const [hydr, setHydr] = useState(false);
   const [responseText, setResponseText] = useState("hi");
   const [msg, setMsg] = useState("");
   const [loading, setLoading] = useState(false);
+
   const [messageHistory, setMessageHistory] = useState(() => {
     // Retrieve the value from localStorage or use a default value
     if (typeof window !== 'undefined') {
@@ -107,8 +111,9 @@ export default function Home()  {
     <main>
       <div className='navbar'>
         <p>AuzaWeb <small>ai</small></p>
+        <Mode  />
       </div>
-
+      
       <div className='result' ref={boxRef} >
         {loading ? (
           <Image src={loadingImg} width={200} height={200} alt="Loading..." />

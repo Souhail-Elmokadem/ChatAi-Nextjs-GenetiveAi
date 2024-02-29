@@ -6,14 +6,30 @@
   --foreground-rgb: 0, 0, 0;
   --background-start-rgb: 214, 219, 220;
   --background-end-rgb: 255, 255, 255;
+  --bg-color-light: #ffffff;
+  --text-color-light: #333333;
+  --bg-color-dark: #333333;
+  --text-color-dark: #ffffff;
 }
 
 @media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
+  body {
+    background-color: var(--bg-color-dark);
+    color: var(--text-color-dark);
   }
+ 
+}
+body{
+  transition: .4s ease-in;
+
+}
+.dark-mode {
+  background-color: #212121;
+  color: #ffffff;
+  transition: .4s ease-in;
+}
+.dark-mode  .navbar p {
+  color: white;
 }
 
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100..900&display=swap');
@@ -51,12 +67,19 @@ section button{
   position: relative;
   left: -70px;
 }
+.dark-mode section button{
+  background-color:#ebebebe3;
+  color: #212121;
+}
 section button:disabled{
-  background-color:#d8dbe0;
+  background-color:#e0e0e0;
   color: #ffffff;
   border:none;
 }
-
+.dark-mode section button:disabled{
+  background-color:#ffffff2d;
+  color: #212121;
+}
 section {
   color: white;
   align-items: center;
@@ -69,22 +92,32 @@ section {
 section input[type='text'] {
    width: 80%;
    height: 60px;
-   color: #7a7e83;
+   color: #747474;
    border-radius: 20px;
    padding-left: 30px;
-   border: .6px solid rgb(178, 178, 178);
+   border: .6px solid rgb(138, 138, 138);
    outline: 0px;
    transition: .4s all ease;
    background-color: #f0f4f9;
    resize: none;
    column-span: 1;
 }
+.dark-mode section input[type='text'] {
+  background-color: #212121;
+  border: .6px solid rgb(138, 138, 138);
+  transition: .4s ease-out;
+  color: white;
+}
 section input[type='text']:focus{
-  border: 1.5px solid rgb(103, 103, 103);
+  border: 1.3px solid rgb(103, 103, 103);
   background-color: rgb(159, 255, 255);
 
 }
+.dark-mode section input[type='text']:focus{
+  background-color: #212121;
+  border: 1.3px solid rgb(103, 103, 103);
 
+}
 .result{
   max-width: 82%;
   height: 75vh;
@@ -125,10 +158,16 @@ section input[type='text']:focus{
   border-radius: 50px;
 }
 .navbar{
+  display: flex;
+  flex-direction: column;
   width: 100%;
   height: 100px;
   border-bottom: 30px #041e49 solid;
   padding: 25px;
+}
+
+.dark-mode .navbar{
+  border-bottom: 30px #0e0e0e solid;
 }
 .navbar p{
   margin-left: 15px;
@@ -138,7 +177,7 @@ section input[type='text']:focus{
   color: #7a7e83;
 }
 .navbar::after{
-  content: 'Intelligence Artificielle Générative (Nouvelle Version)';
+  content: 'Générative Ai (New Version)';
   position: absolute;
   top: 74px;
   color: white;
@@ -150,7 +189,7 @@ section input[type='text']:focus{
 .codeblock{
    /* background-color: #141414; */
    padding: 5px;
-   color: rgb(0, 0, 0);
+   
    padding-left: 15px;  
    margin: 10px 0; /* Ajoutez une marge autour du bloc de code */
    border-radius: 5px; /* Ajoutez des coins arrondis pour un meilleur aspect */
@@ -216,3 +255,61 @@ section input[type='text']:focus{
  
  }
 
+.darkMode{
+  width: 50px;
+  height: 25px;
+  border-radius: 20px;
+  background-color: #212121;
+  color: white;
+  transition: .6S ease-in-out;
+  display: flex;
+  justify-content: space-between;
+}
+.icon{
+  margin-left: 7px;
+  visibility: hidden;
+}
+.darkMode::after{
+  content: '';
+  position: relative;
+  left: -33px;
+  transition: .6S ease-in-out;
+  height: 20px;
+  min-width: 20px;
+  margin: 2px;
+  border-radius: 20px;
+  background-color: #ffffff;
+}
+.dark-mode .darkMode{
+  background-color: #04cccc;
+  
+}
+.dark-mode .darkMode::after{
+  content: '-';
+  position: relative;
+  left: -10px;
+}
+/* scroll bar */
+
+::-webkit-scrollbar {
+  width: 5px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  
+  border-radius: 100px;
+}
+ 
+
+ 
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #383838; 
+  border-radius: 20px;
+}
+/* Handle */
+::-webkit-scrollbar-thumb:hover {
+  background: #717070ed; 
+  border-radius: 100px;
+}
