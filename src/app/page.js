@@ -24,11 +24,17 @@ export default function Home()  {
     return [];
   });
   const isMsgEmpty = msg.trim() === "";
+ 
 
+  
+  
+  
   useEffect(() => {
     setHydr(true);
+   
   }, []);
-
+  
+  
   useEffect(() => {
     if (typeof window !== 'undefined') {
       localStorage.setItem('messagelocal', JSON.stringify(messageHistory))
@@ -115,6 +121,8 @@ export default function Home()  {
       </div>
       
       <div className='result' ref={boxRef} >
+        
+     
         {loading ? (
           <Image src={loadingImg} width={200} height={200} alt="Loading..." />
         ) : responseText && hydr && (
@@ -138,6 +146,7 @@ export default function Home()  {
             ))}
           </div>
         )}
+ 
       </div>
 
       <section>
