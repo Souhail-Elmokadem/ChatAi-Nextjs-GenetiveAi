@@ -103,6 +103,7 @@ section input[type='text'] {
    background-color: #f0f4f9;
    resize: none;
    column-span: 1;
+   padding-right: 58px;
 }
 .dark-mode section input[type='text'] {
   background-color: #212121;
