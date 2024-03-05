@@ -88,6 +88,7 @@ section {
   position: fixed;
   border-radius: 100px;
   padding-top: 50px;
+  z-index: 100 !important;
 }
 section input[type='text'] {
    width: 80%;
@@ -120,12 +121,14 @@ section input[type='text']:focus{
 }
 .result{
   max-width: 82%;
-  height: 75vh;
+  min-height: 75vh;
   position: relative;
   left: 50%;
   transform: translateX(-50%);
   padding: 20px;
   overflow-x:hidden;
+  min-height: 77vh;
+  z-index: 99  !important;
 }
 .result > img {
     pointer-events: none;
@@ -255,7 +258,11 @@ section input[type='text']:focus{
   }
  
  }
-
+@media screen and (min-width: 1400px) {
+  .result{
+    padding-bottom: 70px;
+  }
+}
 .darkMode{
   width: 50px;
   height: 25px;
