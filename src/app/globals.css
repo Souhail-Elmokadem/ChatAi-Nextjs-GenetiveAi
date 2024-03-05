@@ -129,6 +129,8 @@ section input[type='text']:focus{
   overflow-x:hidden;
   min-height: 77vh;
   z-index: 99  !important;
+  padding-bottom: 70px;
+
 }
 .result > img {
     pointer-events: none;
@@ -258,11 +260,7 @@ section input[type='text']:focus{
   }
  
  }
-@media screen and (min-width: 1400px) {
-  .result{
-    padding-bottom: 70px;
-  }
-}
+
 .darkMode{
   width: 50px;
   height: 25px;
