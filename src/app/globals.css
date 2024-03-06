@@ -252,7 +252,8 @@ section input[type='text']:focus{
   }
   .result {
     max-width: 100%;
-    min-height: 80vh;
+    max-height: 82vh;
+    padding-bottom: 10px;
   }
  
  }
