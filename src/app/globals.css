@@ -23,7 +23,6 @@ body{
   transition: .4s ease-in;
   background-color:white;
   color: #0e0e0e;
-  overflow: hidden;
 }
 .dark-mode {
   background-color: #212121;
@@ -259,7 +258,7 @@ section input[type='text']:focus{
  @media screen and (max-width: 1400px) {
   
   .result {
-    height: 70vh;
+    height: 90vh;
   }
  
  }
