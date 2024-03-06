@@ -253,14 +253,26 @@ section input[type='text']:focus{
   .result {
     max-width: 100%;
     max-height: 82vh;
-    padding-bottom: 10px;
+    padding-bottom: 30px;
+  }
+ 
+ }
+ @media screen and (max-width: 375px) {
+  section{
+   width: 100%;
+   width: 120%;
+    margin-left: 35px;
+  }
+  .result {
+    max-width: 100%;
+    max-height: 64vh;
   }
  
  }
  @media screen and (max-width: 1400px) {
   
   .result {
-    height: 90vh;
+    height: 86vh;
   }
  
  }
